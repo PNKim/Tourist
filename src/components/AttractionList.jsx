@@ -9,7 +9,7 @@ function AttractionList() {
   const getDataFromServer = async () => {
     try {
       const getAttraction = await axios.get(
-        `http://localhost:4001/trips?keywords=${searchAttraction}`
+        `https://spirited-bravery-production.up.railway.app/trips?keywords=${searchAttraction}`
       );
       setAttractions(getAttraction.data.data);
     } catch (error) {
