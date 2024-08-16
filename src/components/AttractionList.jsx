@@ -9,7 +9,7 @@ function AttractionList() {
   const getDataFromServer = async () => {
     try {
       const getAttraction = await axios.get(
-        `https://spirited-bravery-production.up.railway.app/trips?keywords=${searchAttraction}`
+        `${import.meta.env.VITE_BACKEND_URL}/trips?keywords=${searchAttraction}`
       );
       setAttractions(getAttraction.data.data);
     } catch (error) {
@@ -37,7 +37,7 @@ function AttractionList() {
       </section>
       <section
         id="AttractionList"
-        className="w-[70%] mt-10 mb-10 flex flex-col gap-10 "
+        className="w-[70%] mt-10 mb-10 flex flex-col items-center gap-10 "
       >
         {attractions.map((attraction) => {
           return (
